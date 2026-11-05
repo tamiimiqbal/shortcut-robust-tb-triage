@@ -1,0 +1,64 @@
+# CSE 414: Shortcut-Robust Multimodal Tuberculosis Triage Configuration
+project:
+  name: "shortcut-robust-tb-triage"
+  course: "CSE 414 - Machine Learning and Deep Learning Lab (UAP)"
+  authors:
+    - "Md Tamim Iqbal (22201141)"
+    - "Sujana Mahmuda Nite (23101120)"
+    - "Puja Saha (22201213)"
+  seed: 42
+
+data:
+  coda_countries:
+    - "India"
+    - "Madagascar"
+    - "Philippines"
+    - "South Africa"
+    - "Tanzania"
+    - "Uganda"
+    - "Vietnam"
+  sample_rate: 16000
+  clip_duration_sec: 0.5
+  bandpass_low_hz: 100.0
+  bandpass_high_hz: 6000.0
+  n_mels: 64
+  n_fft: 512
+  hop_length: 256
+  n_mfcc: 40
+  max_coughs_per_patient: 8
+  numeric_clinical_cols:
+    - "age"
+    - "height"
+    - "weight"
+    - "bmi"
+    - "reported_cough_dur"
+    - "heart_rate"
+    - "temperature"
+  categorical_clinical_cols:
+    - "sex"
+    - "fever"
+    - "weight_loss"
+    - "night_sweats"
+    - "hemoptysis"
+    - "smoke_lweek"
+    - "prior_tb"
+
+model:
+  audio_embed_dim: 128
+  clinical_embed_dim: 64
+  fusion_dim: 128
+  bilstm_hidden_dim: 64
+  dropout: 0.30
+  use_focal_loss: true
+  focal_alpha: 0.70
+  focal_gamma: 2.0
+  adv_lambda_max: 0.65
+
+training:
+  batch_size: 32
+  epochs: 30
+  learning_rate: 1.0e-3
+  weight_decay: 1.0e-4
+  n_folds: 5
+  who_target_sensitivity: 0.90
+  who_target_specificity: 0.70

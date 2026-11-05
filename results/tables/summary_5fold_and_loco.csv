@@ -1,0 +1,8 @@
+Model,CV5_AUROC,CV5_Spec_at_90Sens,LOCO_AUROC,LOCO_Spec_at_90Sens,Country_Probe_Acc,LOCO_ECE
+Clinical Logistic Regression,0.781,0.4604,0.7666,0.4299,0.16,0.1731
+Clinical Random Forest,0.775,0.462,0.7544,0.419,0.16,0.212
+Clinical XGBoost,0.7578,0.3861,0.7401,0.369,0.16,0.0854
+Audio MFCC + Random Forest,0.8767,0.6297,0.7559,0.3392,0.72,0.315
+Audio 2D CNN-BiLSTM,0.8762,0.6456,0.7315,0.2758,0.6571,0.37
+Late-Fusion Network (Audio+Clin),0.9226,0.7864,0.8066,0.4646,0.6686,0.3094
+Proposed (Gated + GRL + Calibrated),0.8208,0.5601,0.8853,0.6619,0.1257,0.0661

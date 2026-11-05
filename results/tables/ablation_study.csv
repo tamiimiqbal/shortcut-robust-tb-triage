@@ -1,0 +1,8 @@
+Variant,LOCO_AUROC,Spec_at_90Sens,Country_Probe_Acc,ECE
+Full Proposed Model (Gated + GRL + Resampling + TempScale),0.8853,0.6619,0.1257,0.0667
+w/o Temperature Scaling (Uncalibrated Logits),0.8853,0.6619,0.1257,0.3342
+w/o Site-Balanced Resampling (Uniform Batching),0.8593,0.6099,0.2137,0.0907
+w/o GRL Site-Adversarial Head (Standard Training),0.8246,0.4996,0.6376,0.1047
+w/o Gated Cross-Modal Attention (Concat Late-Fusion),0.8066,0.4646,0.6686,0.1117
+w/o Clinical Modality (Audio 2D CNN-BiLSTM Only),0.7315,0.2758,0.6571,0.1287
+w/o Audio Modality (Clinical Questionnaire Only),0.7666,0.4299,0.16,0.0957
